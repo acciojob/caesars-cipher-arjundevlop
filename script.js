@@ -13,8 +13,27 @@ const lookup = {
 function rot13(encodedStr){
    let decodedArr = []; // Your Result goes here
   // Only change code below this line
+	let encryptedStr = "";
+	
+	for(var i=0; i<encodedStr.length; i++)
+		{
+			let character = encodedStr.charAt(i);
+			if(character.charCodeAt()>=65 && character.charCodeAt()<=90)
+			{
+				if(character.charCodeAt()>=78)
+			    {
+				   encryptedStr += String.fromCharCode(character.charCodeAt()-13);
+			     } else {
+				   encryptedStr += String.fromCharCode(character.charCodeAt()+13);
+			    }
+			}
+			else{
+				encryptedStr+=character;
+			}
+			
+		}
 
-  return ;//return decodedArr
+  return encryptedStr ;//return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
